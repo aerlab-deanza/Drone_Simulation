@@ -14,7 +14,7 @@ reference.
 | **Kaung Thet Zaw** | **Phong Nguyen** |
 |:---|:---|
 | **Project Leadership, Simulation & Control** | **Estimation & Visualization** |
-| Kaung Thet Zaw (Alex) was the leader of this project. Worked on the quadcopter dynamics and RK4 integration, quaternions and frame conversions, PID and LQR controllers, motor mixing, and IMU sensor simulation. | Worked on Euler angles, the Madgwick and Kalman filters, documentation, visualization, OpenCR firmware and serial integration, the simulation pipeline and trajectories, the waypoint demo, and tests. |
+| Kaung Thet Zaw (Alex) led this project. Worked on the quadcopter dynamics and RK4 integration, quaternions and frame conversions, PID and LQR controllers, motor mixing, and IMU sensor simulation. | Worked on Euler angles, the Madgwick and Kalman filters, documentation, visualization, OpenCR firmware and serial integration, the simulation pipeline and trajectories, the waypoint demo, and tests. |
 | GitHub: [@RuseaDev](https://github.com/RuseaDev)<br>LinkedIn: [Kaung Thet Zaw](https://www.linkedin.com/in/kaung-thet-zaw-186b761aa/)<br>Instagram: [@applesbananasndstrawberries](https://www.instagram.com/applesbananasndstrawberries/) | GitHub: [@AlexDaPiggie](https://github.com/AlexDaPiggie)<br>LinkedIn: [Phong Nguyen](https://www.linkedin.com/in/hoai-phong-nguyen-9367a4384/) |
 
 ---
