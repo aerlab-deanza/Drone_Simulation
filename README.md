@@ -11,10 +11,11 @@ reference.
 
 ## Authors
 
-| Author | GitHub |
+| **Kaung Thet Zaw** | **Phong Nguyen** |
 |:---|:---|
-| [Alex](https://github.com/RuseaDev) | [@RuseaDev](https://github.com/RuseaDev) |
-| [Phong Nguyen](https://github.com/AlexDaPiggie) | [@AlexDaPiggie](https://github.com/AlexDaPiggie) |
+| **Project Leadership, Simulation & Control** | **Estimation & Visualization** |
+| Kaung Thet Zaw (Alex) was the leader of this project. Worked on the quadcopter dynamics and RK4 integration, quaternions and frame conversions, PID and LQR controllers, motor mixing, and IMU sensor simulation. | Worked on Euler angles, the Madgwick and Kalman filters, documentation, visualization, OpenCR firmware and serial integration, the simulation pipeline and trajectories, the waypoint demo, and tests. |
+| GitHub: [@RuseaDev](https://github.com/RuseaDev)<br>LinkedIn: [Kaung Thet Zaw](https://www.linkedin.com/in/kaung-thet-zaw-186b761aa/)<br>Instagram: [@applesbananasndstrawberries](https://www.instagram.com/applesbananasndstrawberries/) | GitHub: [@AlexDaPiggie](https://github.com/AlexDaPiggie)<br>LinkedIn: [Phong Nguyen](https://www.linkedin.com/in/hoai-phong-nguyen-9367a4384/) |
 
 ---
 
@@ -72,17 +73,17 @@ IMU noise) are listed in the [demos section](https://aerlab-deanza.github.io/Dro
 
 | Path | Contents |
 |---|---|
-| `drone_sim/dynamics` | Plant model, rotations, quaternions, frame conversions |
-| `drone_sim/control` | Cascaded PID, LQR |
-| `drone_sim/sensors` | MPU6050 noise model, OpenCR serial reader |
-| `drone_sim/estimation` | Madgwick filter, EKF |
-| `drone_sim/simulation` | Figure-eight pipeline, waypoint demo |
-| `drone_sim/visualization` | Live viewer and demo plots |
-| `firmware/` | OpenCR IMU-stream sketch |
-| `notebooks/` | Exploratory notebooks |
-| `tests/` | `pytest` suite (also runs the docstring examples) |
-| `docs/` | Sphinx documentation source |
-| `videos/` | Manim theory-video sources and demo-recording scripts |
+| [`drone_sim/dynamics`](drone_sim/dynamics/) | Plant model, rotations, quaternions, frame conversions |
+| [`drone_sim/control`](drone_sim/control/) | Cascaded PID, LQR |
+| [`drone_sim/sensors`](drone_sim/sensors/) | MPU6050 noise model, OpenCR serial reader |
+| [`drone_sim/estimation`](drone_sim/estimation/) | Madgwick filter, EKF |
+| [`drone_sim/simulation`](drone_sim/simulation/) | Figure-eight pipeline, waypoint demo |
+| [`drone_sim/visualization`](drone_sim/visualization/) | Live viewer and demo plots |
+| [`firmware/`](firmware/) | OpenCR IMU-stream sketch |
+| [`notebooks/`](notebooks/) | Exploratory notebooks |
+| [`tests/`](tests/) | `pytest` suite (also runs the docstring examples) |
+| [`docs/`](docs/) | Sphinx documentation source |
+| [`videos/`](videos/) | Manim theory-video sources and demo-recording scripts |
 
 ## Development
 
