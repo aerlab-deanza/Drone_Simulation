@@ -1,0 +1,132 @@
+"""Sphinx configuration for the drone_sim documentation.
+
+Build locally (strict, warnings are errors)::
+
+    python -m sphinx -W --keep-going -b html docs docs/_build/html
+"""
+
+from __future__ import annotations
+
+import shutil
+import sys
+from pathlib import Path
+
+DOCS_DIR = Path(__file__).resolve().parent
+REPO_ROOT = DOCS_DIR.parent
+sys.path.insert(0, str(REPO_ROOT))
+sys.path.insert(0, str(DOCS_DIR / "_ext"))
+
+import drone_sim  # noqa: E402
+
+# -- Project ---------------------------------------------------------------
+project = "drone_sim"
+author = "Alex and Phong Nguyen"
+copyright = "2026, Applied Engineering Research Lab (AERL)"
+release = drone_sim.__version__
+version = release
+
+# -- Extensions ------------------------------------------------------------
+extensions = [
+    "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.viewcode",
+    "sphinx.ext.mathjax",
+    "sphinx.ext.intersphinx",
+    "sphinx_autodoc_typehints",
+    "sphinx_copybutton",
+    "myst_nb",
+    "sphinx_design",
+    "youtube",
+]
+
+source_suffix = {".rst": "restructuredtext", ".md": "myst-nb", ".ipynb": "myst-nb"}
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**.ipynb_checkpoints"]
+templates_path = ["_templates"]
+
+# -- Google-style docstrings ----------------------------------------------
+napoleon_google_docstring = True
+napoleon_numpy_docstring = False
+napoleon_use_rtype = False
+napoleon_attr_annotations = True
+napoleon_use_ivar = True
+
+autosummary_generate = True
+autodoc_default_options = {
+    "members": True,
+    "undoc-members": False,
+    "show-inheritance": True,
+    "member-order": "bysource",
+}
+autodoc_preserve_defaults = True
+typehints_use_signature = False
+typehints_use_signature_return = False
+typehints_document_rtype = True
+always_use_bars_union = True
+
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/3", None),
+    "numpy": ("https://numpy.org/doc/stable", None),
+    "scipy": ("https://docs.scipy.org/doc/scipy", None),
+    "matplotlib": ("https://matplotlib.org/stable", None),
+    "pandas": ("https://pandas.pydata.org/docs", None),
+}
+
+# -- MyST / notebooks ------------------------------------------------------
+myst_enable_extensions = ["dollarmath", "amsmath", "colon_fence", "deflist",
+                          "attrs_inline", "attrs_block", "substitution"]
+myst_heading_anchors = 3
+# Notebooks are stored with outputs; the docs build never re-runs them.
+nb_execution_mode = "off"
+suppress_warnings = ["mystnb.unknown_mime_type"]
+
+# -- HTML: Sphinx Book theme in the AERL palette -----------------------------
+html_theme = "sphinx_book_theme"
+html_title = "Drone Simulation"
+html_static_path = ["_static"]
+html_css_files = ["custom.css"]
+html_favicon = "_static/favicon.png"
+html_last_updated_fmt = "%d %b %Y"
+html_context = {"default_mode": "auto"}          # follow the reader's system theme
+html_theme_options = {
+    "logo": {
+        "image_light": "_static/logo-light.png",
+        "image_dark": "_static/logo-dark.png",
+        "alt_text": "AERL — Drone Simulation",
+    },
+    "repository_url": "https://github.com/aerlab-deanza/Drone_Simulation",
+    "repository_branch": "main",
+    "path_to_docs": "docs",
+    "use_repository_button": True,
+    "use_issues_button": True,
+    "use_edit_page_button": True,
+    "use_download_button": True,
+    "use_fullscreen_button": True,
+    "home_page_in_toc": False,
+    "show_navbar_depth": 1,
+    "show_toc_level": 2,
+    "navigation_with_keys": True,
+    # Footer: linked authors (in order), then copyright, last update, license.
+    "footer_content_items": ["extra-footer", "copyright", "last-updated"],
+    "extra_footer": (
+        "<p>By <a href='https://github.com/RuseaDev'>Alex</a> and "
+        "<a href='https://github.com/AlexDaPiggie'>Phong Nguyen</a>. "
+        "Released under the "
+        "<a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache License 2.0</a>.</p>"
+    ),
+}
+
+
+# -- Copy the repository notebooks into the source tree --------------------
+def _copy_notebooks(_app) -> None:
+    """Mirror ``notebooks/*.ipynb`` into ``docs/examples/notebooks`` (gitignored)."""
+    target = DOCS_DIR / "examples" / "notebooks"
+    target.mkdir(parents=True, exist_ok=True)
+    for notebook in (REPO_ROOT / "notebooks").glob("*.ipynb"):
+        destination = target / notebook.name
+        if not destination.exists() or destination.read_bytes() != notebook.read_bytes():
+            shutil.copy2(notebook, destination)
+
+
+def setup(app) -> None:
+    app.connect("builder-inited", _copy_notebooks)

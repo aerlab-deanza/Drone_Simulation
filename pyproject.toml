@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drone_sim"
+version = "0.1.0"
+description = "Quadcopter simulation: rigid-body dynamics, PID/LQR control, MPU6050 noise model, Madgwick and EKF estimation."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [
+    { name = "Alex" },
+    { name = "Phong Nguyen" },
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "pandas",
+    "pyserial",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+docs = [
+    "sphinx>=7",
+    "sphinx-book-theme",
+    "sphinx-design",
+    "myst-nb",
+    "sphinx-autodoc-typehints",
+    "sphinx-copybutton",
+    "ipykernel",
+]
+
+videos = ["manim>=0.18"]
+
+[project.scripts]
+drone-sim = "drone_sim.simulation.pipeline:main"
+drone-sim-live = "drone_sim.live:main"
+
+[tool.setuptools.packages.find]
+include = ["drone_sim*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "drone_sim"]
+addopts = "--doctest-modules"
+norecursedirs = ["docs", "videos", "notebooks", ".venv", "outputs", "*.egg-info"]

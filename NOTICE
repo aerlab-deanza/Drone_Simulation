@@ -1,0 +1,7 @@
+Drone Simulation
+Copyright 2026 Applied Engineering Research Lab (AERL)
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The default MPU6050 noise parameters in drone_sim/sensors/imu_simulator.py are
+measured values published by Gonzalez and Dabove (2019).

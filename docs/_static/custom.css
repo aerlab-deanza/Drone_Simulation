@@ -1,0 +1,222 @@
+/* =========================================================================
+   AERL palette for the Sphinx Book theme (built on the PyData theme).
+   Logo colours: deep teal #00343d, light grey #d9d9d9, pale cyan #c9f6fd,
+   cyan #5ce1e6, red #ff3131.
+   Only the theme's colour variables are overridden, so the layout stays
+   the theme's own and survives theme updates.
+   ========================================================================= */
+
+html[data-theme="light"] {
+  --pst-color-primary: #006b78;          /* links, active nav */
+  --pst-color-primary-bg: #e3f4f6;
+  --pst-color-secondary: #00343d;        /* hover, highlights */
+  --pst-color-secondary-bg: #d7eef1;
+  --pst-color-accent: #d62828;           /* used sparingly */
+  --pst-color-link: #006b78;
+  --pst-color-link-hover: #00343d;
+  --pst-color-heading: #00343d;
+  --pst-color-text-base: #1d2b2e;
+  --pst-color-text-muted: #5b6f73;
+  --pst-color-background: #ffffff;
+  --pst-color-on-background: #f5fafb;
+  --pst-color-surface: #eef6f7;
+  --pst-color-on-surface: #00343d;
+  --pst-color-border: #d3e3e6;
+  --pst-color-inline-code: #00606e;
+  --pst-color-target: #fff3d6;
+  --aerl-hero-bg: #00343d;
+}
+
+html[data-theme="dark"] {
+  --pst-color-primary: #5ce1e6;
+  --pst-color-primary-bg: #0b3f49;
+  --pst-color-secondary: #c9f6fd;
+  --pst-color-secondary-bg: #0e4752;
+  --pst-color-accent: #ff5757;
+  --pst-color-link: #5ce1e6;
+  --pst-color-link-hover: #c9f6fd;
+  --pst-color-heading: #e8f4f6;
+  --pst-color-text-base: #d4e2e5;
+  --pst-color-text-muted: #9bb3b8;
+  --pst-color-background: #00262d;       /* a shade darker than the logo teal */
+  --pst-color-on-background: #00343d;    /* sidebars and cards: the logo teal */
+  --pst-color-surface: #0a3d47;
+  --pst-color-on-surface: #e8f4f6;
+  --pst-color-border: #17505a;
+  --pst-color-inline-code: #8be9ec;
+  --pst-color-target: #24424a;
+  --aerl-hero-bg: #00343d;
+}
+
+/* -- Chrome ---------------------------------------------------------------- */
+/* The skip-to-content link sits just off-screen; its border peeked through as a
+   thin line across the top of every page. It still appears on keyboard focus. */
+.skip-link { border-bottom: 0; background-color: #00343d; }
+.skip-link a { color: #ffffff; }
+.skip-link:not(:focus-within) { transform: translateY(-120%); }
+/* On desktop the sidebar already has search, so hide the duplicate header bar
+   (as on the Isaac Lab docs). Phones keep it: their sidebar is collapsed. */
+@media (min-width: 960px) {
+  .bd-header { display: none; }
+}
+
+/* -- Logo ----------------------------------------------------------------- */
+.navbar-brand img.logo__image,
+.sidebar-primary-items__start .navbar-brand img {
+  max-height: 4.2rem;
+  width: auto;
+}
+
+/* -- Front page ------------------------------------------------------------ */
+/* Isaac-Lab-style banner: the looping 3D clip, full width, no overlay. */
+.aerl-banner {
+  margin: 0.5rem 0 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--aerl-hero-bg);
+  aspect-ratio: 16 / 9;
+}
+.aerl-banner video { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.aerl-hero {
+  position: relative;
+  margin: 0 0 1.75rem;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--aerl-hero-bg);
+  aspect-ratio: 16 / 9;
+  max-height: 440px;
+  width: 100%;
+}
+.aerl-hero video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.aerl-hero__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.1rem 1.4rem;
+  background: linear-gradient(to top, rgba(0, 38, 45, 0.92), rgba(0, 38, 45, 0));
+  color: #e8f4f6;
+}
+.aerl-hero__caption .aerl-hero__title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+.aerl-hero__caption .aerl-hero__lab {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5ce1e6;
+  margin: 0 0 0.2rem;
+}
+/* Phones: caption below the clip instead of over it. */
+@media (max-width: 640px) {
+  .aerl-hero { aspect-ratio: auto; max-height: none; }
+  .aerl-hero video { height: auto; aspect-ratio: 16 / 9; }
+  .aerl-hero__caption { position: static; background: var(--aerl-hero-bg); padding: 0.8rem 1rem 1rem; }
+  .aerl-hero__caption .aerl-hero__title { font-size: 1.2rem; }
+}
+.aerl-pitch {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--pst-color-text-base);
+  margin-bottom: 1.5rem;
+}
+
+/* Feature cards (sphinx-design) */
+.aerl-cards .sd-card {
+  border: 1px solid var(--pst-color-border);
+  border-top: 3px solid var(--pst-color-primary);
+  border-radius: 10px;
+  background: var(--pst-color-on-background);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.aerl-cards .sd-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 52, 61, 0.18);
+}
+.aerl-cards .sd-card-title {
+  color: var(--pst-color-heading);
+  font-weight: 700;
+}
+.aerl-cards .sd-card-text {
+  color: var(--pst-color-text-muted);
+}
+
+/* -- Layered theory pages ---------------------------------------------------- */
+/* "In plain words": the summary every reader should get, in the lab teal. */
+.admonition.aerl-plain {
+  border-color: var(--pst-color-primary);
+  background: var(--pst-color-primary-bg);
+  font-size: 1.05rem;
+}
+.admonition.aerl-plain > .admonition-title,
+html[data-theme] .admonition.aerl-plain > .admonition-title {
+  background: var(--pst-color-primary);
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .admonition.aerl-plain > .admonition-title { color: #00262d !important; }
+.admonition.aerl-plain > .admonition-title::after { color: var(--pst-color-background); }
+/* "Why it matters for the drone": ties the result back to the simulator. */
+.admonition.aerl-why {
+  border-color: var(--pst-color-accent);
+}
+.admonition.aerl-why > .admonition-title {
+  background: color-mix(in srgb, var(--pst-color-accent) 14%, transparent);
+}
+.admonition.aerl-why > .admonition-title::after { color: var(--pst-color-accent); }
+/* Collapsible derivations */
+details.sd-dropdown { margin: 0.6rem 0; }
+details.sd-dropdown > summary.sd-summary-title {
+  font-weight: 600;
+  color: var(--pst-color-heading);
+}
+
+/* -- "Finding" headings get the logo's red as a small accent bar ----------- */
+#findings h3 {
+  border-left: 4px solid var(--pst-color-accent);
+  padding-left: 0.6rem;
+}
+
+/* -- Videos: responsive 16:9 embeds, local demo videos, placeholders -------- */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 1rem 0 1.5rem;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 10px;
+}
+video.demo-video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0.5rem 0 1.5rem;
+  border-radius: 10px;
+  background: #000;
+}
+.video-placeholder {
+  margin: 1rem 0 1.5rem;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  border: 2px dashed var(--pst-color-border);
+  border-radius: 10px;
+  color: var(--pst-color-text-muted);
+}
+
+/* Keep wide equations scrollable on phones. */
+.math-wrapper, div.math { overflow-x: auto; }
