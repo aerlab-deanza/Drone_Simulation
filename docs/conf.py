@@ -86,7 +86,6 @@ html_title = "Drone Simulation"
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 html_favicon = "_static/favicon.png"
-html_last_updated_fmt = "%d %b %Y"
 html_context = {"default_mode": "dark"}          # default to dark; readers can switch themes
 html_theme_options = {
     "logo": {
@@ -106,10 +105,11 @@ html_theme_options = {
     "show_navbar_depth": 1,
     "show_toc_level": 2,
     "navigation_with_keys": True,
-    # Footer: linked authors (in order), then copyright, last update, license.
-    "footer_content_items": ["extra-footer", "copyright", "last-updated"],
+    # Footer: authors and their areas, the license, then the copyright.
+    "footer_content_items": ["extra-footer", "copyright"],
     "extra_footer": (
-        "<p>By <a href='https://github.com/RuseaDev'>Kaung Thet Zaw</a> and "
+        "<p>Led by <a href='https://github.com/RuseaDev'>Kaung Thet Zaw</a> "
+        "(dynamics, control and simulation), with filters and documentation by "
         "<a href='https://github.com/AlexDaPiggie'>Phong Nguyen</a>. "
         "Released under the "
         "<a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache License 2.0</a>.</p>"
