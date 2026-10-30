@@ -9,6 +9,8 @@ live from an OpenCR board's IMU.
 quick start, demo videos, full theory derivations, findings, and the API
 reference.
 
+![A tour of the documentation: theme switch, every page, and the demo and theory videos](docs/_static/videos/docs_tour.gif)
+
 ## Authors
 
 | **Kaung Thet Zaw** | **Phong Nguyen** |
