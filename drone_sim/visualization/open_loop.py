@@ -26,9 +26,9 @@ InputFunction = Callable[[float, DroneConfig], tuple[float, np.ndarray]]
 def scripted_maneuver(t: float, config: DroneConfig) -> tuple[float, np.ndarray]:
     """Return a hand-written thrust/torque schedule.
 
-    The schedule is: climb with a roll doublet (0–2 s), hover with pitch and
-    roll doublets (2–5 s), coast (5–5.5 s), then descend with combined
-    doublets (5.5–9 s).
+    The schedule is: climb with a roll doublet (0-2 s), hover with pitch and
+    roll doublets (2-5 s), coast (5-5.5 s), then descend with combined
+    doublets (5.5-9 s).
 
     Args:
         t: Time (s).

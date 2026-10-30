@@ -157,7 +157,7 @@ def first_command() -> dict:
 
 @lru_cache
 def gauss_markov_example(n: int = 6000, dt: float = 0.01, tau: float = 5.0, std: float = 1.0) -> dict:
-    """One Gauss–Markov sequence for illustration (unit std)."""
+    """One Gauss-Markov sequence for illustration (unit std)."""
     from drone_sim.sensors.imu_simulator import gauss_markov_bias
 
     rng = np.random.default_rng(7)

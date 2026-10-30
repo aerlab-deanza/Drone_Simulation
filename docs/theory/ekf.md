@@ -91,7 +91,7 @@ transition evaluations per sample.
 deviations $\sigma_a, \sigma_g$. They enter through the same discrete map as
 the measurements: $Q = G_a \Sigma_a G_a^\top + G_g \Sigma_g G_g^\top + Q_b\Delta t$,
 with $G_a = [\tfrac12 R\Delta t^2;\ R\Delta t;\ 0]$. Keeping $G_a$ intact
-preserves the position–velocity correlation, and makes the velocity variance
+preserves the position-velocity correlation, and makes the velocity variance
 grow as $\sigma_a^2\Delta t^2$ per step. The test
 `test_sample_accelerometer_noise_covariance_scales_with_dt_squared` checks
 this scaling.

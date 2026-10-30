@@ -1,4 +1,4 @@
-# Video 1 — Euler angles, gimbal lock, and quaternions (on-screen captions)
+# Video 1 - Euler angles, gimbal lock, and quaternions (on-screen captions)
 
 One bullet = one caption card, shown in order across the scene.
 

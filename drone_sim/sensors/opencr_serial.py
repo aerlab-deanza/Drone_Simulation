@@ -4,10 +4,10 @@ The firmware (``firmware/opencr_imu_stream``) prints one CSV line per sample::
 
     timestamp_us,gx,gy,gz,ax,ay,az,mx,my,mz
 
-* ``timestamp_us`` — board ``micros()`` timestamp.
-* ``gx..gz`` — gyro rates (deg/s).
-* ``ax..az`` — accelerometer specific force (g).
-* ``mx..mz`` — raw magnetometer counts. All zeros means no magnetometer.
+* ``timestamp_us`` - board ``micros()`` timestamp.
+* ``gx..gz`` - gyro rates (deg/s).
+* ``ax..az`` - accelerometer specific force (g).
+* ``mx..mz`` - raw magnetometer counts. All zeros means no magnetometer.
 
 Lines starting with ``#`` are comments. Readings are converted to SI units.
 """

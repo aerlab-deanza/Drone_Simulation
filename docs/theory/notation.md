@@ -9,11 +9,11 @@ A quick reference for the symbols and terms used on the theory pages.
 | $\phi, \theta, \psi$ | roll, pitch, yaw: the three Euler angles (ZYX order) | rad |
 | $\dot\phi, \dot\theta, \dot\psi$ | how fast each Euler angle changes | rad/s |
 | $\boldsymbol\omega = [\omega_x, \omega_y, \omega_z]$ | body spin rate, what a gyroscope measures | rad/s |
-| $R$ | rotation matrix from the body frame to the world frame | — |
-| $R^\top$ | its transpose: from world back to body | — |
-| $q = (w, x, y, z)$ | unit quaternion (attitude), scalar part first | — |
-| $q^*$ | quaternion conjugate, the reverse rotation | — |
-| $\otimes$ | quaternion multiplication (order matters) | — |
+| $R$ | rotation matrix from the body frame to the world frame | - |
+| $R^\top$ | its transpose: from world back to body | - |
+| $q = (w, x, y, z)$ | unit quaternion (attitude), scalar part first | - |
+| $q^*$ | quaternion conjugate, the reverse rotation | - |
+| $\otimes$ | quaternion multiplication (order matters) | - |
 | $\mathbf p$, $\mathbf v$, $\mathbf a$ | position, velocity, acceleration | m, m/s, m/s² |
 | $\mathbf f$ | specific force, what an accelerometer measures | m/s² |
 | $g$ | gravity: 9.81 in the plant, 9.80665 for the hardware | m/s² |
@@ -24,9 +24,9 @@ A quick reference for the symbols and terms used on the theory pages.
 | $N$ | white-noise density of a sensor | (unit)/√Hz |
 | $B$, $\tau_c$ | bias instability and its correlation time | (unit), s |
 | $\beta$ | Madgwick correction speed | rad/s |
-| $P$ | uncertainty (covariance) in the EKF; Riccati solution in the LQR | — |
-| $K$ | Kalman gain (EKF) or feedback gain (LQR) | — |
-| $Q$, $R$ | LQR weights on state error and on input effort | — |
+| $P$ | uncertainty (covariance) in the EKF; Riccati solution in the LQR | - |
+| $K$ | Kalman gain (EKF) or feedback gain (LQR) | - |
+| $Q$, $R$ | LQR weights on state error and on input effort | - |
 | $\Delta t$, $h$ | time step | s |
 
 A dot above a symbol means "rate of change": $\dot x = dx/dt$.
@@ -70,7 +70,7 @@ Observable
   from an IMU alone. See {doc}`ekf`.
 
 RK4
-: Fourth-order Runge–Kutta, the method that steps the physics forward in time.
+: Fourth-order Runge-Kutta, the method that steps the physics forward in time.
   See {doc}`dynamics`.
 
 Linearization

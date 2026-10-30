@@ -6,7 +6,7 @@ Each axis of each sensor is modelled as::
 
 * **White noise** has density ``N`` (unit/√Hz). Sampled at ``fs`` it has a
   per-sample standard deviation ``N·√fs``.
-* **Bias instability** is a first-order Gauss–Markov (Ornstein–Uhlenbeck)
+* **Bias instability** is a first-order Gauss-Markov (Ornstein-Uhlenbeck)
   process with stationary standard deviation ``B`` and correlation time ``τ_c``.
   It wanders slowly, so integrating a gyro reading makes the angle drift.
 
@@ -35,7 +35,7 @@ class AxisNoiseParams:
 
     #: White-noise density ``N`` (sensor unit per √Hz).
     noise_density: float
-    #: Stationary std ``B`` of the Gauss–Markov bias (sensor unit).
+    #: Stationary std ``B`` of the Gauss-Markov bias (sensor unit).
     bias_std: float
     #: Bias correlation time ``τ_c`` (s).
     correlation_time_s: float
@@ -58,7 +58,7 @@ MPU6050_ACCEL_DEFAULT = [
 
 def gauss_markov_bias(n_samples: int, dt: float, bias_std: float,
                       correlation_time_s: float, rng: np.random.Generator) -> np.ndarray:
-    """Sample a first-order Gauss–Markov bias sequence.
+    """Sample a first-order Gauss-Markov bias sequence.
 
     The discrete process is ``b[k+1] = φ b[k] + q w[k]`` with
     ``φ = exp(-dt/τ_c)`` and ``q = B √(1 - φ²)``, so its stationary std is ``B``.

@@ -124,7 +124,7 @@ torque magnitude.
 ::::{dropdown} Derivation: RK4 and its accuracy
 :icon: unfold
 
-The plant is advanced with the classical fourth-order Runge–Kutta method
+The plant is advanced with the classical fourth-order Runge-Kutta method
 ({func}`~drone_sim.dynamics.plant.rk4_step`), holding $T$ and
 $\boldsymbol\tau$ constant over the step (a zero-order hold, like a digital
 controller):

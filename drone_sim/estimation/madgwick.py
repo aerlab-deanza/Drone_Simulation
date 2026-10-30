@@ -118,7 +118,7 @@ class MadgwickMARG:
     def objective_jacobian(q: ArrayLike, bx: float, bz: float) -> np.ndarray:
         """Return the 6×4 Jacobian of :meth:`objective_function` w.r.t. ``q``.
 
-        Rows 0–2 are the gravity terms and rows 3–5 the magnetic terms.
+        Rows 0-2 are the gravity terms and rows 3-5 the magnetic terms.
 
         Args:
             q: Attitude ``[w, x, y, z]``.

@@ -1,4 +1,4 @@
-# Video 2 — IMU noise and drift (on-screen captions)
+# Video 2 - IMU noise and drift (on-screen captions)
 
 One bullet = one caption card, shown in order across the scene.
 
@@ -33,7 +33,7 @@ One bullet = one caption card, shown in order across the scene.
 - After 7 s this gyro has drifted only about a hundredth of a degree.
 
 ## S06GaussMarkov
-- The bias instability is a Gauss–Markov process: keep a fraction φ of the bias, add a little fresh noise.
+- The bias instability is a Gauss-Markov process: keep a fraction φ of the bias, add a little fresh noise.
 - With φ = e^(−Δt/τ), the bias forgets itself over a correlation time τ.
 - In steady state the variance stops changing: σ² = φ²σ² + q².
 - Choosing q = B·√(1 − φ²) makes the spread exactly B.

@@ -426,7 +426,7 @@ class LiveOpenCRViewer:
             if fwd_norm > 1e-9:
                 forward = forward / fwd_norm
             self.sim_position += forward * self.FORWARD_SPEED_M_S * dt
-            # No hard boundaries on XY — the camera follows the drone so the
+            # No hard boundaries on XY - the camera follows the drone so the
             # space feels infinite and open. Only clamp Z so the drone stays
             # within the visible altitude range.
             self.sim_position[2] = np.clip(self.sim_position[2], 0.05, 2.95)
@@ -460,7 +460,7 @@ class LiveOpenCRViewer:
         )
         path = self._ordered_path()
         self.path_line.set_data_3d(path[:, 0], path[:, 1], path[:, 2])
-        # Camera follows the drone every frame — no snap threshold.
+        # Camera follows the drone every frame - no snap threshold.
         # The view window slides smoothly so the space feels open and infinite.
         radius = 2.0
         self.board_ax.set_xlim(center[0] - radius, center[0] + radius)

@@ -1,4 +1,4 @@
-"""Video 4 — Dynamics and control: RK4, PID and LQR.
+"""Video 4 - Dynamics and control: RK4, PID and LQR.
 
 Render one scene (preview quality)::
 
@@ -120,7 +120,7 @@ class S01Intro(NarratedScene):
 
 class S02NewtonEuler(NarratedScene):
     def construct(self):
-        self.heading("Newton–Euler equations")
+        self.heading("Newton-Euler equations")
         translation = tex(r"\dot{\mathbf v} = \frac{1}{m}\Big(R\begin{bmatrix}0\\0\\-T\end{bmatrix} - k_d\mathbf v\Big)"
                           r" + \begin{bmatrix}0\\0\\g\end{bmatrix}", size=40).shift(1.9 * UP)
         self.play(Write(translation), run_time=2.5)
@@ -225,12 +225,12 @@ class S04Saturation(NarratedScene):
 
 class S05RK4(NarratedScene):
     def construct(self):
-        self.heading("Runge–Kutta 4")
+        self.heading("Runge-Kutta 4")
         axes, labels = axes_box([0, 1.2, 0.2], [0.8, 3.6, 0.5], x_length=6.5, y_length=4.6, numbers=False,
                                 x_label="t", y_label="y")
         VGroup(axes, labels).to_edge(LEFT, buff=0.9).shift(0.3 * DOWN)
         self.play(Create(axes), FadeIn(labels))
-        f = lambda t, y: y  # noqa: E731 — y' = y, exact solution e^t
+        f = lambda t, y: y  # noqa: E731 - y' = y, exact solution e^t
         exact = axes.plot(lambda t: np.exp(t), x_range=[0, 1.2], color=MUTED, stroke_width=3)
         self.play(Create(exact))
         h, t0, y0 = 1.0, 0.0, 1.0
@@ -260,7 +260,7 @@ class S05RK4(NarratedScene):
         self.wait(2)
         badge = finding_badge(12, "full trial state in every stage").next_to(order, DOWN, buff=0.6)
         badge.to_edge(RIGHT, buff=0.4)
-        lesson = tex(r"k_2 = f\big(t+\tfrac h2,\ \mathbf x + \tfrac h2 k_1\big)\ \text{— including }\boldsymbol\omega",
+        lesson = tex(r"k_2 = f\big(t+\tfrac h2,\ \mathbf x + \tfrac h2 k_1\big)\ \text{- including }\boldsymbol\omega",
                      size=26).next_to(badge, DOWN, buff=0.3).to_edge(RIGHT, buff=0.5)
         self.play(FadeIn(badge))
         self.play(Write(lesson), run_time=2)
@@ -420,7 +420,7 @@ class S10Limits(NarratedScene):
         self.play(Create(graph), run_time=2.5)
         peak = int(np.argmax(pitch))
         dot = Dot(axes.c2p(t[peak], pitch[peak]), color=BAD)
-        tag = label(f"peak {pitch[peak]:.0f}° — far from hover, still converges", 22, BAD)
+        tag = label(f"peak {pitch[peak]:.0f}° - far from hover, still converges", 22, BAD)
         tag.next_to(axes, UP, buff=0.25).align_to(axes, LEFT)
         self.play(FadeIn(dot), FadeIn(tag))
         self.wait(2)
@@ -437,7 +437,7 @@ class S10Limits(NarratedScene):
         why.align_to(rows, LEFT)
         self.play(FadeIn(why))
         self.wait(2)
-        caveat = label("Caveat: both controllers fly on the true state — flying on the estimates is next.",
+        caveat = label("Caveat: both controllers fly on the true state - flying on the estimates is next.",
                        24, FG).to_edge(DOWN, buff=0.9)
         self.play(FadeIn(caveat))
         self.wait(3)

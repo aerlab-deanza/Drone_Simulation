@@ -1,0 +1,10 @@
+{#- Browser-tab title: "Page - Drone Simulation", with a short dash.
+    Sphinx's base template hard-codes an em dash here. -#}
+{%- extends "!layout.html" %}
+{%- block htmltitle %}
+    {%- if title and pagename != "index" %}
+    <title>{{ title|striptags|e }} - {{ docstitle|e }}</title>
+    {%- else %}
+    <title>{{ title|striptags|e if title else docstitle|e }}</title>
+    {%- endif %}
+{%- endblock %}

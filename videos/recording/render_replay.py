@@ -73,7 +73,7 @@ def main() -> None:
     ax3d = fig.add_subplot(grid[:, 0], projection="3d")
     ax_att = fig.add_subplot(grid[0, 1])
     ax_track = fig.add_subplot(grid[1, 1])
-    fig.suptitle(f"Offline demo replay — climbing figure-eight, {args.controller.upper()} controller "
+    fig.suptitle(f"Offline demo replay - climbing figure-eight, {args.controller.upper()} controller "
                  f"({args.speed:g}× speed)", fontsize=14)
 
     pos, ref, ekf = log["pos"], log["pos_des"], log["ekf_pos"]

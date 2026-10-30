@@ -1,4 +1,4 @@
-# Video 4 — Dynamics and control: RK4, PID and LQR
+# Video 4 - Dynamics and control: RK4, PID and LQR
 
 Target length: about 6.5 minutes. One audio file per scene, named by scene
 ID, in `videos/audio/v4_control/`.
@@ -10,7 +10,7 @@ ID, in `videos/audio/v4_control/`.
 **On screen:** side view of the drone recovering from a tilted, spinning
 start under LQR control; title.
 
-> Our simulated drone starts five metres off target, tilted, and spinning —
+> Our simulated drone starts five metres off target, tilted, and spinning -
 > and recovers in a few seconds. To make that happen we need three things: a
 > model of the physics, a way to integrate it accurately, and a controller.
 > This video derives all three.
@@ -23,7 +23,7 @@ highlighted.
 
 > Translation is Newton's second law: thrust, rotated into the world, plus
 > drag, divided by mass, plus gravity. Rotation is Euler's equation. Angular
-> momentum is I times omega in body axes — but the body axes themselves
+> momentum is I times omega in body axes - but the body axes themselves
 > rotate, so the torque equals I omega-dot plus omega cross I omega. That
 > cross product is the gyroscopic term: spinning about one axis while pitching
 > produces a roll acceleration. For a symmetric quadcopter, it gives three
@@ -40,14 +40,14 @@ r × F; the mixing matrix M; spin directions.
 > axes, so its lever arm is the arm length over root two. The torque of each
 > force is r cross F. Collecting all four gives one matrix, M, from the four
 > squared motor speeds to thrust and three torques. Two motors spin clockwise,
-> two counter-clockwise — that's what lets the drone control yaw.
+> two counter-clockwise - that's what lets the drone control yaw.
 
 ## S04Saturation (≈ 40 s)
 
 **On screen:** finding 10. Requested vs feasible torque; the allocation
 s = s_T + λ s_τ with λ chosen to fit the motor limits; thrust preserved.
 
-> M is invertible, so any request has a solution — on paper. But motors can't
+> M is invertible, so any request has a solution - on paper. But motors can't
 > spin backwards, and they have a top speed. On the first step of our demo,
 > the controller asks for about ten times more torque than the motors can
 > produce while holding the drone up. Simply clipping each motor turned a
@@ -63,9 +63,9 @@ average; local O(h⁵) / global O(h⁴); lesson 12: every stage needs the full
 trial state.
 
 > To move the model forward in time, we use the classic fourth-order
-> Runge–Kutta method. Instead of trusting the slope at the start of a step,
+> Runge-Kutta method. Instead of trusting the slope at the start of a step,
 > it samples four slopes: at the start, twice at the midpoint, and at the end
-> — each one using the previous estimate. A weighted average of the four is
+> - each one using the previous estimate. A weighted average of the four is
 > accurate to fourth order: halve the step, and the error drops sixteen-fold.
 > One lesson from development: an early version used the current body rates
 > in every stage instead of the trial state. Each stage must see the full
@@ -95,7 +95,7 @@ the RMS errors.
 > It starts tilted and spinning, falls behind for the first second, then
 > follows the path with an RMS error of about fifteen centimetres
 > horizontally and one centimetre in altitude. The small lag is because the position loop only reacts to error
-> — it doesn't know where the path is going next.
+> - it doesn't know where the path is going next.
 
 ## S08LQRDerivation (≈ 50 s)
 
@@ -108,8 +108,8 @@ boxed.
 > horizontal acceleration. We choose a cost: the integral of x-transpose Q x,
 > which penalizes error, plus u-transpose R u, which penalizes effort. Guess
 > that the best achievable cost from state x is x-transpose P x. The
-> Hamilton–Jacobi–Bellman equation then asks for the u that minimizes a
-> quadratic — setting its gradient to zero gives u equals minus R-inverse
+> Hamilton-Jacobi-Bellman equation then asks for the u that minimizes a
+> quadratic - setting its gradient to zero gives u equals minus R-inverse
 > B-transpose P x. Substituting back, the equation must hold for every x,
 > and that leaves the algebraic Riccati equation for P.
 
@@ -119,7 +119,7 @@ boxed.
 proof; eigenvalues of our drone's Hamiltonian in the complex plane; P = X₂X₁⁻¹.
 
 > How do we solve it? Pair the state with a costate, and both evolve under one
-> matrix: the Hamiltonian. Its eigenvalues always come in plus-minus pairs —
+> matrix: the Hamiltonian. Its eigenvalues always come in plus-minus pairs -
 > J times H is symmetric, so H is similar to minus H-transpose. Here are the
 > twenty-four eigenvalues for our drone: perfectly mirrored. The optimal
 > motion must decay, so it lives in the stable half. Take the eigenvectors for
@@ -132,10 +132,10 @@ proof; eigenvalues of our drone's Hamiltonian in the complex plane; P = X₂X₁
 PID vs LQR; caveat 13; end card with the docs link.
 
 > But LQR is only optimal for the linear model near hover. In the recovery
-> demo it pitches the drone to fifty-eight degrees — far outside that region —
+> demo it pitches the drone to fifty-eight degrees - far outside that region -
 > and still converges, thanks to its robust stability margins. On the moving
 > figure-eight, though, it tracks two to ten times worse than the PID: it was
 > designed to hold a point, not follow a path. And one caveat for the whole
 > project: these controllers fly on the true state. Flying on the filters'
-> estimates is the next step. Thanks for watching — the full derivations are
+> estimates is the next step. Thanks for watching - the full derivations are
 > in the documentation.

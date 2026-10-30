@@ -1,4 +1,4 @@
-# Video 3 — Sensor fusion: Madgwick and the EKF (on-screen captions)
+# Video 3 - Sensor fusion: Madgwick and the EKF (on-screen captions)
 
 One bullet = one caption card, shown in order across the scene.
 

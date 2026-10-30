@@ -1,4 +1,4 @@
-"""Video 3 — Sensor fusion: Madgwick and the EKF.
+"""Video 3 - Sensor fusion: Madgwick and the EKF.
 
 Render one scene (preview quality)::
 
@@ -274,7 +274,7 @@ class S05YawUnobservable(NarratedScene):
         self.wait(2)
         story = VGroup(label("early version:", 24, MUTED),
                        label("filter heading 0°, drone heading 28.6°", 24),
-                       label("→ constant 28.6° yaw error — not a bug", 24, WARM)).arrange(DOWN, aligned_edge=LEFT)
+                       label("→ constant 28.6° yaw error - not a bug", 24, WARM)).arrange(DOWN, aligned_edge=LEFT)
         story.shift(3 * RIGHT + 1.6 * DOWN)
         self.play(FadeIn(story, lag_ratio=0.3), run_time=2)
         self.wait(5)
@@ -344,7 +344,7 @@ class S08Observability(NarratedScene):
         self.play(FadeIn(badge))
         rows = [("roll, pitch", "gravity", "yes (when gravity-valid)", GOOD),
                 ("yaw", "magnetometer only", "only with a magnetometer", WARM),
-                ("position, velocity", "nothing", "never — H columns are zero", BAD)]
+                ("position, velocity", "nothing", "never - H columns are zero", BAD)]
         table = VGroup(*[VGroup(label(a, 24), label(b, 24, MUTED), label(c, 24, color)) for a, b, c, color in rows])
         table.arrange(DOWN, buff=0.22, aligned_edge=LEFT).shift(1.9 * UP)
         for row in table:

@@ -12,7 +12,7 @@
 
 **Drone Simulation** is a quadcopter simulator built from first principles by
 the Applied Engineering Research Lab (AERL). It models the drone as a rigid
-body, integrates it with fourth-order Runge–Kutta, flies it with a cascaded
+body, integrates it with fourth-order Runge-Kutta, flies it with a cascaded
 PID or an LQR controller, and simulates the noisy MPU6050 IMU a real drone
 would carry. Two estimators, a Madgwick filter and an extended Kalman filter,
 then reconstruct the attitude from that noisy data. The same estimator also
@@ -36,7 +36,7 @@ Its core objectives are:
 Key features include a 12-state nonlinear plant with saturation-aware motor
 allocation, a multi-rate cascaded PID controller and an LQR whose Riccati
 equation is solved from scratch, a measured MPU6050 noise model (white noise
-plus Gauss–Markov bias), and quaternion-based estimators that never hit
+plus Gauss-Markov bias), and quaternion-based estimators that never hit
 gimbal lock.
 
 :::{note}
@@ -78,7 +78,7 @@ sensor fusion and flight control with animations and on-screen captions.
 
 ## Authors
 
-1. [Alex](https://github.com/RuseaDev)
+1. [Kaung Thet Zaw](https://github.com/RuseaDev)
 2. [Phong Nguyen](https://github.com/AlexDaPiggie)
 
 ## License
@@ -94,7 +94,7 @@ If you use Drone Simulation in your work, please cite it:
 
 ```bibtex
 @software{aerl_drone_simulation_2026,
-  author = {Alex and Phong Nguyen},
+  author = {{Kaung Thet Zaw} and Phong Nguyen},
   title  = {Drone Simulation: A First-Principles Quadcopter Simulator},
   year   = {2026},
   url    = {https://github.com/aerlab-deanza/Drone_Simulation},

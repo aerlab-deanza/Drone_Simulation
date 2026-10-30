@@ -1,4 +1,4 @@
-# Video 2 — IMU noise and drift
+# Video 2 - IMU noise and drift
 
 Target length: about 5.5 minutes. One audio file per scene, named by scene
 ID (e.g. `S01Intro.wav`), in `videos/audio/v2_imu_noise/`.
@@ -23,7 +23,7 @@ noise; each term highlighted; the MPU6050 parameter table.
 
 > Every reading from each axis is modelled as four parts. The true value. A
 > constant bias, a fixed offset that calibration can remove. A bias
-> instability — an offset that slowly wanders. And white noise, which is
+> instability - an offset that slowly wanders. And white noise, which is
 > fresh and independent at every single sample. The numbers in our simulator
 > come from measurements of real MPU-6050 chips, published by Gonzalez and
 > Dabove in 2019.
@@ -34,7 +34,7 @@ noise; each term highlighted; the MPU6050 parameter table.
 morphing into a bell curve.
 
 > Why model the noise as Gaussian? Because sensor noise is the sum of many
-> small, independent effects — thermal motion, electronics, rounding. And the
+> small, independent effects - thermal motion, electronics, rounding. And the
 > central limit theorem says that sums of independent effects tend toward a
 > bell curve, almost regardless of what each effect looks like on its own.
 > Here, averages of a very lopsided distribution become Gaussian as we
@@ -48,7 +48,7 @@ MPU6050 value.
 > Datasheets give white noise as a density, N, in units per root hertz.
 > When we sample at a rate f-s, each sample has a standard deviation of N
 > times the square root of f-s. Sampling four times faster makes each sample
-> twice as noisy — but, as we'll see next, the noise per second stays the
+> twice as noisy - but, as we'll see next, the noise per second stays the
 > same. For the MPU-6050's gyro at a hundred hertz, that's about
 > six-point-six times ten to the minus four radians per second.
 
@@ -61,7 +61,7 @@ spreading; the √t envelope; 0.010° at 7 s.
 > the time step. The variances add up: the number of samples, times sigma
 > squared, times delta-t squared. The sample rate cancels, and we're left
 > with N squared times t. So the standard deviation of the angle error grows
-> like N times the square root of t — a random walk. Run it two hundred times
+> like N times the square root of t - a random walk. Run it two hundred times
 > and the spread follows that curve exactly. For our sensor, after seven
 > seconds, that's just a hundredth of a degree.
 
@@ -70,7 +70,7 @@ spreading; the √t envelope; 0.010° at 7 s.
 **On screen:** b[k+1] = φ b[k] + q w[k]; proof that the stationary
 variance is B²; a sample bias sequence.
 
-> The bias instability is modelled as a Gauss–Markov process: each step keeps
+> The bias instability is modelled as a Gauss-Markov process: each step keeps
 > a fraction phi of the previous bias and adds a little fresh noise. With
 > phi equal to e to the minus delta-t over tau, the bias forgets itself over a
 > correlation time tau. What size of fresh noise keeps its spread at exactly
@@ -84,24 +84,24 @@ variance is B²; a sample bias sequence.
 about 17 s.
 
 > A bias integrates very differently from noise. A constant offset b produces
-> an angle error b times t — linear, not square-root. Put the two together:
+> an angle error b times t - linear, not square-root. Put the two together:
 > early on, the random walk dominates; later, the bias takes over. The two
-> are equal when t equals N squared over B squared — about seventeen seconds
+> are equal when t equals N squared over B squared - about seventeen seconds
 > for this gyro. Our two hundred simulated runs follow the combined curve
 > almost perfectly.
 
 ## S08IntegrationError (≈ 45 s)
 
 **On screen:** finding 4. The demo's attitude error with a noisy IMU and with
-a noise-free IMU — nearly identical; then the 2 kHz curve, four times
+a noise-free IMU - nearly identical; then the 2 kHz curve, four times
 smaller; the table.
 
 > Now a surprise from our own simulator. In the seven-second flight demo, the
 > attitude error peaks at about point one six degrees. Remove all sensor noise
-> — a perfect IMU — and the peak is… exactly the same. The noise isn't the
+> - a perfect IMU - and the peak is… exactly the same. The noise isn't the
 > main culprit. The filter advances its quaternion with one simple step, q
 > plus q-dot times delta-t, and that step makes an error that grows with the
-> rotation rate. Run four times faster, and the error shrinks four times — the
+> rotation rate. Run four times faster, and the error shrinks four times - the
 > signature of a first-order method. Lesson: before blaming the sensor, check
 > the integrator.
 
@@ -113,8 +113,8 @@ gravity; position error growing to about 0.9 m in 10 s.
 > Position is much worse, because the accelerometer is integrated twice.
 > White noise now grows like t to the three-halves, and any bias like t
 > squared. And the biggest culprit is usually tilt: if the estimated attitude
-> is off by just a tenth of a degree, a sliver of gravity — about
-> zero-point-zero-one-seven metres per second squared — leaks into the
+> is off by just a tenth of a degree, a sliver of gravity - about
+> zero-point-zero-one-seven metres per second squared - leaks into the
 > horizontal axes. After ten seconds, that's almost a metre of error.
 
 ## S10Outro (≈ 20 s)
@@ -124,5 +124,5 @@ gravity; position error growing to about 0.9 m in 10 s.
 
 > So the gyroscope is precise over short times but drifts over long ones,
 > while gravity and the magnetic field don't drift but are noisy. Combine
-> them, and the drift disappears — that's sensor fusion, the subject of the
+> them, and the drift disappears - that's sensor fusion, the subject of the
 > next video.

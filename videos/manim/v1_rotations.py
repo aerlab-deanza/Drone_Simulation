@@ -1,4 +1,4 @@
-"""Video 1 — Euler angles, gimbal lock, and quaternions.
+"""Video 1 - Euler angles, gimbal lock, and quaternions.
 
 Render one scene (preview quality)::
 
@@ -388,7 +388,7 @@ class S08QuaternionKinematics(NarratedScene):
         self.heading("Integrating the gyro")
         kinematics = tex(r"\dot q", r"=", r"\tfrac12\,q\otimes(0,\boldsymbol\omega)", size=60).shift(1.8 * UP)
         self.play(Write(kinematics), run_time=2.5)
-        good = label("no tan θ, no 1 / cos θ — bounded for every attitude", 28, GOOD)
+        good = label("no tan θ, no 1 / cos θ - bounded for every attitude", 28, GOOD)
         good.next_to(kinematics, DOWN, buff=0.4)
         self.play(FadeIn(good))
         self.wait(3)
@@ -449,8 +449,8 @@ class S10Outro(NarratedScene):
     def construct(self):
         points = bullet_list([
             "Euler angles: intuitive, but singular at ±90° pitch",
-            "det W = cos θ — the rates blow up",
-            "at 90°, only ψ − φ survives — gimbal lock",
+            "det W = cos θ - the rates blow up",
+            "at 90°, only ψ − φ survives - gimbal lock",
             "quaternions: 4 numbers, no singularity, renormalize",
         ], size=30)
         points.shift(0.6 * UP)

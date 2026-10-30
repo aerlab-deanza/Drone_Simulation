@@ -1,4 +1,4 @@
-# Video 1 — Euler angles, gimbal lock, and quaternions
+# Video 1 - Euler angles, gimbal lock, and quaternions
 
 Target length: about 5 minutes. Record **one audio file per scene**, named
 exactly as the scene ID (e.g. `S01Intro.wav`), into `videos/audio/v1_rotations/`.
@@ -14,7 +14,7 @@ Pronunciation: φ "fee" (roll), θ "THAY-ta" (pitch), ψ "sigh" (yaw).
 and quaternions".
 
 > A drone's flight controller has to answer one question hundreds of times a
-> second: which way am I pointing? The obvious answer is three angles — roll,
+> second: which way am I pointing? The obvious answer is three angles - roll,
 > pitch and yaw. In this video we'll see why those three angles break down
 > at one particular attitude, prove it, and see what our simulator uses
 > instead.
@@ -74,7 +74,7 @@ outer axes line up; the algebra R = Rz(ψ−φ)Ry(90°) appears.
 
 ## S06NoThreeParameter (≈ 20 s)
 
-**On screen:** "Every 3-parameter representation has a singularity" —
+**On screen:** "Every 3-parameter representation has a singularity" -
 Stuelpnagel, 1964; 3 → 4 numbers.
 
 > Is this just a bad choice of angle order? No. It's a theorem: no set of
@@ -91,7 +91,7 @@ sandwich product rotating a vector; Rodrigues' formula.
 > Those four numbers form a unit quaternion. A rotation by angle alpha about
 > the axis n is the quaternion cos of alpha over two, plus sine of alpha over
 > two times n. Quaternions multiply with the Hamilton product, which
-> includes a cross product — so, like rotations, the order matters. To rotate
+> includes a cross product - so, like rotations, the order matters. To rotate
 > a vector, we sandwich it: q, times the vector, times the conjugate of q.
 > Expanding that product and using the half-angle identities gives exactly
 > Rodrigues' rotation formula. So a unit quaternion really is a rotation.
@@ -103,7 +103,7 @@ growing in one discrete step; renormalization.
 
 > And here's the payoff. The gyroscope's angular velocity updates the
 > quaternion through q-dot equals one half q times omega. There's no tangent,
-> no division by cosine — it's well-behaved for every attitude. The exact
+> no division by cosine - it's well-behaved for every attitude. The exact
 > equation keeps q at unit length. But one discrete step, q plus q-dot times
 > delta-t, makes it slightly longer. So after every update, our filters
 > divide q by its length.

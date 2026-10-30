@@ -8,10 +8,10 @@ The 12-element state vector is::
 
     [x, y, z, vx, vy, vz, phi, theta, psi, wx, wy, wz]
 
-* ``x, y, z`` — position in the NED world frame (m).
-* ``vx, vy, vz`` — velocity in the NED world frame (m/s).
-* ``phi, theta, psi`` — ZYX Euler angles roll, pitch, yaw (rad).
-* ``wx, wy, wz`` — body angular velocity in FRD axes (rad/s).
+* ``x, y, z`` - position in the NED world frame (m).
+* ``vx, vy, vz`` - velocity in the NED world frame (m/s).
+* ``phi, theta, psi`` - ZYX Euler angles roll, pitch, yaw (rad).
+* ``wx, wy, wz`` - body angular velocity in FRD axes (rad/s).
 
 The attitude is integrated as Euler angles, so the model is singular at
 pitch ``±90°`` (gimbal lock); see :func:`DronePlant.state_derivative`.
@@ -216,7 +216,7 @@ def euler_rate_matrix(phi: float, theta: float) -> np.ndarray:
 
 def rk4_step(derivative: Callable[[float, np.ndarray], np.ndarray],
              t: float, y: np.ndarray, h: float) -> np.ndarray:
-    """Advance ``y' = f(t, y)`` by one classical fourth-order Runge–Kutta step.
+    """Advance ``y' = f(t, y)`` by one classical fourth-order Runge-Kutta step.
 
     Args:
         derivative: Function ``f(t, y)`` returning ``dy/dt``.

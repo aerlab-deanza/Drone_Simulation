@@ -24,7 +24,7 @@ The live viewer running with a real OpenCR board:
   face and the red axis mark the board's nose (+X).
 - **Virtual flight.** An IMU cannot measure absolute position, so the model
   "flies" forward along its nose at 1.2 m/s: tilt the nose up to climb, roll
-  and yaw to turn. Altitude is clamped to 0–3 m. The camera follows the model.
+  and yaw to turn. Altitude is clamped to 0-3 m. The camera follows the model.
 - **Read-out** (top left): roll, pitch, yaw in degrees, the virtual position,
   and the calibration status.
 - **Gyroscope and accelerometer charts** (right): the last 10 s of raw samples.

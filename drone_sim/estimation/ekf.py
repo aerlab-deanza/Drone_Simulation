@@ -5,11 +5,11 @@ The 16-element state is::
     [position (3), velocity (3), quaternion w,x,y,z (4),
      gyro bias (3), accelerometer bias (3)]
 
-**Predict** — the gyro (minus its bias) integrates the quaternion. The
+**Predict** - the gyro (minus its bias) integrates the quaternion. The
 accelerometer (minus its bias), rotated into the world and with gravity
 removed, integrates velocity and position (strapdown mechanization).
 
-**Update** — when the caller marks the accelerometer as a valid gravity
+**Update** - when the caller marks the accelerometer as a valid gravity
 observation, its direction corrects roll and pitch. An optional magnetometer
 corrects yaw.
 

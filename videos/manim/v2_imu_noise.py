@@ -1,4 +1,4 @@
-"""Video 2 — IMU noise and drift.
+"""Video 2 - IMU noise and drift.
 
 Render one scene (preview quality)::
 
@@ -69,7 +69,7 @@ class S01Intro(NarratedScene):
         t, angle = drift["t"], drift["angles"][4]
         axes, labels = axes_box([0, 60, 10], [-0.08, 0.08, 0.04], y_label="angle (deg)",
                                 x_label="time (s)")
-        caption = label("motionless MPU6050 — integrated gyro", 26, MUTED).next_to(axes, UP)
+        caption = label("motionless MPU6050 - integrated gyro", 26, MUTED).next_to(axes, UP)
         self.play(Create(axes), FadeIn(labels), FadeIn(caption), run_time=1.2)
         progress = ValueTracker(1)
         curve = always_redraw(lambda: axes.plot_line_graph(
@@ -94,8 +94,8 @@ class S02ErrorModel(NarratedScene):
         model = tex(r"\tilde y(t)", r"=", r"y(t)", r"+", r"b_0", r"+", r"b(t)", r"+", r"n(t)", size=56)
         model.shift(2.4 * UP)
         self.play(Write(model), run_time=2)
-        parts = [(2, "true value", FG), (4, "constant bias — calibration removes it", ACCENT),
-                 (6, "bias instability — wanders slowly", PURPLE), (8, "white noise — new every sample", WARM)]
+        parts = [(2, "true value", FG), (4, "constant bias - calibration removes it", ACCENT),
+                 (6, "bias instability - wanders slowly", PURPLE), (8, "white noise - new every sample", WARM)]
         notes = VGroup()
         for index, text, color in parts:
             model[index].set_color(color)
@@ -118,7 +118,7 @@ class S02ErrorModel(NarratedScene):
         for row in table:
             row[1].set_x(1.6, LEFT)
         table.shift(2.1 * DOWN)
-        source = label("Gonzalez & Dabove, 2019 — measured on real MPU6050 units", 20, MUTED)
+        source = label("Gonzalez & Dabove, 2019 - measured on real MPU6050 units", 20, MUTED)
         source.next_to(table, DOWN, buff=0.25)
         self.play(FadeIn(table), FadeIn(source), run_time=1.2)
         self.wait(6)
@@ -254,7 +254,7 @@ class S05RandomWalk(NarratedScene):
 
 class S06GaussMarkov(NarratedScene):
     def construct(self):
-        self.heading("Bias instability: a Gauss–Markov process")
+        self.heading("Bias instability: a Gauss-Markov process")
         recursion = tex(r"b_{k+1}", r"=", r"\varphi\, b_k", r"+", r"q\, w_k", r",\qquad",
                         r"\varphi = e^{-\Delta t/\tau_c}", size=44).shift(2.4 * UP)
         self.play(Write(recursion), run_time=2)
@@ -346,7 +346,7 @@ class S08IntegrationError(NarratedScene):
         self.wait(1.5)
         self.play(Create(clean), FadeIn(legend[1]), run_time=2.5)
         same = label(f"peak {np.abs(errors['noisy']).max():.3f}° vs {np.abs(errors['clean']).max():.3f}°"
-                     " — noise is not the culprit", 24, FG).next_to(axes, DOWN, buff=0.55)
+                     " - noise is not the culprit", 24, FG).next_to(axes, DOWN, buff=0.55)
         self.play(FadeIn(same))
         self.wait(2)
         self.play(Create(fast), FadeIn(legend[2]), run_time=2.5)

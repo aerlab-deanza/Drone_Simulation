@@ -35,7 +35,7 @@ Google style, read by `sphinx.ext.napoleon`:
 
 ```python
 def rk4_step(derivative, t, y, h):
-    """Advance ``y' = f(t, y)`` by one classical fourth-order Runge–Kutta step.
+    """Advance ``y' = f(t, y)`` by one classical fourth-order Runge-Kutta step.
 
     Args:
         derivative: Function ``f(t, y)`` returning ``dy/dt``.

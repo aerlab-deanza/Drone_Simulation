@@ -3,9 +3,9 @@
 The source logo is white/grey line art on a solid deep-teal background. This
 script removes the background (recovering a proper alpha channel) and writes:
 
-* ``logo-dark.png`` — original colours, for the dark theme;
-* ``logo-light.png`` — lines recoloured to the lab's deep teal, for the light theme;
-* ``favicon.png`` — the gear-and-magnifier mark on a teal rounded square.
+* ``logo-dark.png`` - original colours, for the dark theme;
+* ``logo-light.png`` - lines recoloured to the lab's deep teal, for the light theme;
+* ``favicon.png`` - the gear-and-magnifier mark on a teal rounded square.
 
 Run from the repository root::
 

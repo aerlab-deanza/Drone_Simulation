@@ -82,11 +82,11 @@ and $R = \operatorname{diag}(0.5, 20, 20, 20)$ favour level attitude and allow
 generous thrust while keeping torques gentle.
 ::::
 
-::::{dropdown} Step 2: deriving the Riccati equation (Hamilton–Jacobi–Bellman)
+::::{dropdown} Step 2: deriving the Riccati equation (Hamilton-Jacobi-Bellman)
 :icon: unfold
 
 Guess that the optimal cost-to-go is quadratic, $V(\mathbf x) = \mathbf x^\top P\mathbf x$
-with $P = P^\top$. The Hamilton–Jacobi–Bellman equation for an infinite
+with $P = P^\top$. The Hamilton-Jacobi-Bellman equation for an infinite
 horizon says
 
 $$
@@ -174,7 +174,7 @@ with the yaw error wrapped into $(-\pi, \pi]$ and thrust clipped at zero
   LQR designs have generous stability margins (for full-state feedback, at
   least 60° of phase margin per input channel). It is no longer optimal
   there, though, and motor saturation clips its commands ({doc}`/demos/other`).
-- On the moving figure-eight it tracks 2–10× worse than the cascaded PID: it
+- On the moving figure-eight it tracks 2-10× worse than the cascaded PID: it
   was designed to hold a point, not to follow a path (finding 11 on the
   {doc}`/findings/index` page).
 :::

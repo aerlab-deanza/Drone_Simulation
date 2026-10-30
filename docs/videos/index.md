@@ -2,7 +2,7 @@
 
 Animated explanations (made with [Manim](https://www.manim.community/)) of the
 theory behind the simulator, using the project's own simulation data. Each
-video explains itself with on-screen captions and is about 4–5 minutes long.
+video explains itself with on-screen captions and is about 4-5 minutes long.
 
 ## 1. Euler angles, gimbal lock, and quaternions
 

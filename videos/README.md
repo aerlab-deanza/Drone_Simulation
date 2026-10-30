@@ -49,7 +49,7 @@ animation.
 - **Timing:** each card stays up for its reading time (about 14 characters
   per second, at least 2.2 s). A scene is stretched to the longer of its
   natural length and its total reading time. Animations change speed only
-  modestly (×0.75–×1.35); the pauses absorb the rest.
+  modestly (×0.75-×1.35); the pauses absorb the rest.
 - **Optional voice-over:** `narration/<video>.md` holds a spoken script. To
   add your voice to a scene, save a clip named after the scene (e.g.
   `videos/audio/v1_rotations/S01Intro.wav`) and re-run `all`. That clip then

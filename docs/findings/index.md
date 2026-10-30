@@ -113,7 +113,7 @@ which can have exactly the norm of gravity.
 
 **What the code does.** Both filters take an explicit `gravity_valid`
 flag. The offline demo sets it False for the whole powered flight, so attitude
-there is gyro-only (findings 3–4). The live viewer sets it True only when the
+there is gyro-only (findings 3-4). The live viewer sets it True only when the
 board is detected as stationary. A test feeds a constant non-vertical
 acceleration and checks that the attitude does not move.
 
@@ -204,7 +204,7 @@ demo a motor hits zero speed on about 2 % of steps. See {doc}`/theory/dynamics`.
 
 **Observation.** In the recovery demo the LQR pitches the drone to about 58°
 (1.01 rad), far from the hover point it was designed around, and still
-converges in about 5 s. On the moving figure-eight it tracks 2–10× worse
+converges in about 5 s. On the moving figure-eight it tracks 2-10× worse
 than the PID:
 
 | Controller | RMSE x | RMSE y | RMSE altitude |

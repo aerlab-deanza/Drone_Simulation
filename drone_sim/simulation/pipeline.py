@@ -119,15 +119,15 @@ def run_pipeline(duration_s: float = 7.0, dt: float = 1.0 / 500, seed: int = 0,
         ``(x, y, altitude)``, angles are plant ZYX Euler angles in rad, and
         arrays have ``n + 1`` rows unless noted:
 
-        * ``t``, ``sensor_t`` — state and IMU times (s); ``control_t`` — the
+        * ``t``, ``sensor_t`` - state and IMU times (s); ``control_t`` - the
           ``n`` command times (s).
-        * ``pos``, ``pos_des`` — true and reference position (m).
-        * ``att_true``, ``att_est`` — true and Madgwick attitude.
-        * ``ekf_pos``, ``ekf_velocity``, ``ekf_att`` — EKF estimates.
-        * ``rate_true`` — true FRD body rates (rad/s).
-        * ``thrust`` (N), ``torques`` (N·m), ``motor_speeds`` (rad/s) — ``n`` rows.
+        * ``pos``, ``pos_des`` - true and reference position (m).
+        * ``att_true``, ``att_est`` - true and Madgwick attitude.
+        * ``ekf_pos``, ``ekf_velocity``, ``ekf_att`` - EKF estimates.
+        * ``rate_true`` - true FRD body rates (rad/s).
+        * ``thrust`` (N), ``torques`` (N·m), ``motor_speeds`` (rad/s) - ``n`` rows.
         * ``gyro_meas`` (rad/s), ``accel_meas`` (m/s²), ``specific_force_true``
-          (m/s²) — FLU body axes.
+          (m/s²) - FLU body axes.
         * ``controller_type`` and ``metadata`` (frame and assumption notes).
 
     Raises:

@@ -1,4 +1,4 @@
-# Video 4 — Dynamics and control: RK4, PID and LQR (on-screen captions)
+# Video 4 - Dynamics and control: RK4, PID and LQR (on-screen captions)
 
 One bullet = one caption card, shown in order across the scene.
 
@@ -29,7 +29,7 @@ One bullet = one caption card, shown in order across the scene.
 - Holding altitude beats turning fast.
 
 ## S05RK4
-- To move the model forward in time: the classic fourth-order Runge–Kutta method.
+- To move the model forward in time: the classic fourth-order Runge-Kutta method.
 - It samples four slopes: at the start, twice at the midpoint, and at the end, each using the previous estimate.
 - Their weighted average is accurate to fourth order: halve the step, and the error drops 16×.
 - Lesson learned: an early version reused the current body rates in every stage.
@@ -64,6 +64,6 @@ One bullet = one caption card, shown in order across the scene.
 ## S10Limits
 - LQR is optimal only for the linear model near hover.
 - In the recovery demo it pitches the drone to 58°, far outside that region, and still converges.
-- On the moving figure-eight it tracks 2–10× worse than the PID: it was designed to hold a point, not follow a path.
+- On the moving figure-eight it tracks 2-10× worse than the PID: it was designed to hold a point, not follow a path.
 - Caveat: both controllers fly on the true state. Flying on the filters' estimates is the next step.
 - Full derivations are in the documentation.

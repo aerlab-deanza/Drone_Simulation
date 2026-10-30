@@ -68,9 +68,9 @@ about 0.1°.
 
 | Term | Name | Parameter (per axis) | Behaviour |
 |---|---|---|---|
-| $y$ | true value | — | — |
+| $y$ | true value | - | - |
 | $b_0$ | constant bias | `*_constant_bias_*` | fixed offset, removable by calibration |
-| $b(t)$ | bias instability | $B$, $\tau_c$ | wanders slowly; Gauss–Markov process |
+| $b(t)$ | bias instability | $B$, $\tau_c$ | wanders slowly; Gauss-Markov process |
 | $n(t)$ | white noise | density $N$ | independent at every sample |
 
 Measured values (Gonzalez & Dabove, 2019, *Table 2*):
@@ -104,7 +104,7 @@ sample. A higher sample rate gives noisier individual samples but the same
 noise *per second*.
 ::::
 
-::::{dropdown} Proof: the Gauss–Markov bias has spread exactly B
+::::{dropdown} Proof: the Gauss-Markov bias has spread exactly B
 :icon: unfold
 
 $b(t)$ obeys $\dot b = -b/\tau_c + w(t)$, a mean-reverting random walk.

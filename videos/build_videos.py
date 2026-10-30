@@ -16,7 +16,7 @@ How timing works:
   (one bullet per caption card). A card stays up for its reading time, about
   14 characters per second and at least 2.2 s.
 * A scene is stretched to the longer of its natural length and its total
-  reading time. Animations change speed only modestly (×0.75–1.35); the
+  reading time. Animations change speed only modestly (×0.75-1.35); the
   pauses absorb the rest.
 * Optional narration: if ``videos/audio/<video>/<Scene>.wav`` (or ``.mp3``,
   ``.m4a``, ``.flac``) exists, the clip's length drives that scene instead,

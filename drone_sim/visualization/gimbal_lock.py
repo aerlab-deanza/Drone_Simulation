@@ -66,7 +66,7 @@ def recovered_euler_angles(roll_deg: float = 10.0, yaw_deg: float = 20.0,
     Args:
         roll_deg: Input roll (deg).
         yaw_deg: Input yaw (deg).
-        pitch_deg: Pitch sweep (deg). Defaults to 70–110° skipping 90° ± 0.1°.
+        pitch_deg: Pitch sweep (deg). Defaults to 70-110° skipping 90° ± 0.1°.
 
     Returns:
         ``pitch_deg`` and ``recovered_deg``, an ``(n, 3)`` array of recovered
