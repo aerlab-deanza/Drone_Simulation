@@ -108,9 +108,10 @@ html_theme_options = {
     # Footer: authors and their areas, the license, then the copyright.
     "footer_content_items": ["extra-footer", "copyright"],
     "extra_footer": (
-        "<p>Led by <a href='https://github.com/RuseaDev'>Kaung Thet Zaw</a> "
-        "(dynamics, control and simulation), with filters and documentation by "
-        "<a href='https://github.com/AlexDaPiggie'>Phong Nguyen</a>. "
+        "<p>Leader: <a href='https://github.com/RuseaDev'>Kaung Thet Zaw</a> - "
+        "dynamics, control algorithms, simulation pipeline.<br>"
+        "Contributor: <a href='https://github.com/AlexDaPiggie'>Phong Nguyen</a> - "
+        "filters, firmware, documentation.<br>"
         "Released under the "
         "<a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache License 2.0</a>.</p>"
     ),
